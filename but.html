@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon BUT INFO</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('ciel.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        #video-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="video-container">
+        <h1>Mon BUT Informatique</h1>
+        <video id="myVideo" controls autoplay ontimeupdate="changeBackground()">
+            <source src="Mon_BUT_Informatique.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <script>
+        function changeBackground() {
+            var video = document.getElementById("myVideo");
+            if (video.currentTime >= 30 && video.currentTime < 65) {
+                document.body.style.backgroundImage = "url('iut.jpg')";
+            } else if (video.currentTime >= 65 && video.currentTime < 71) {
+                document.body.style.backgroundImage = "url('site.jpg')";
+            } else if (video.currentTime >= 78 && video.currentTime < 88) {
+                document.body.style.backgroundImage = "url('cyber.jpg')";
+            } else if (video.currentTime >= 88 && video.currentTime < 100) {
+                document.body.style.backgroundImage = "url('paf.jpg')";
+            } else if (video.currentTime >= 100 && video.currentTime < 110) {
+                document.body.style.backgroundImage = "url('ministere.jpg')";
+            }else {
+                document.body.style.backgroundImage = "url('ciel.jpg')";
+            }
+        }
+    </script>
+</body>
+</html>
